@@ -39,6 +39,7 @@ public class CustomerService : ICustomerService
 
             // 4. Öppna anslutningen till databasen...
             connection.Open();
+            Console.WriteLine($"Database: {Path.GetFullPath(connection.DataSource)}");
 
             // 5. Skicka frågan till databasen...
             using SqliteDataReader reader = command.ExecuteReader();

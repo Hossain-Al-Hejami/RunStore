@@ -19,7 +19,7 @@ public class OrderService : IOrderService
     {
         try
         {
-            var sqlInsertString = "INSERT INTO Orders(id,OrderDate)";
+            var sqlInsertString = "INSERT INTO Orders(id,orderDate)";
             sqlInsertString += $"VALUES('{order.Id}','{order.OrdersDate}';";
 
             using SqliteConnection connection = new(_connectionString);

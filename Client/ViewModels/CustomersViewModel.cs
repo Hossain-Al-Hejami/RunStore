@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using Client.Models;
 using Client.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using Avalonia.Controls;
 
 namespace Client.ViewModels;
 
@@ -17,7 +18,11 @@ public partial class CustomersViewModel : ViewModelBase
     {
         PageTitle = "Kunder";
         _customerService = new CustomerService();
-        LoadCustomers();
+
+        if (!Design.IsDesignMode)
+        {
+            LoadCustomers();
+        }
     }
 
     private void LoadCustomers()
