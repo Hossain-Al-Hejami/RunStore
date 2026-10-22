@@ -2,29 +2,74 @@ INSERT INTO Customers(
     id,
     firstName,
     lastName,
-    email
+    email,
+    phone,
+    addressLine,
+    postalCode,
+    city
 )
-VALUES(
+VALUES
+(
     '6639cea1-10db-416b-9e06-4f75e3b6b7fe',
     'Michael',
     'Gustavsson',
-    'michael@mail.com'
+    'michael@mail.com',
+    '0701-11 11 11',
+    'Strandvägen 1',
+    '444 12',
+    'Byn'
 ),
 (
     '21bcb6b4-3c96-4c59-b833-f5b3fa57f6c5',
     'Oskar',
-    'Persson',
-    'per@mail.com'
+    'Person',
+    'oskar@mail.com',
+    '0701-11 11 11',
+    'Strandvägen 2',
+    '444 12',
+    'Byn'
 ),
 (
     '3a9410da-f6de-4c17-bc7f-11d16ebd7bf5',
     'Helene',
-    'Eriksson',
-    'helene@mail.com'
+    'Persson',
+    'helene@mail.com',
+    '0701-11 11 11',
+    'Strandvägen 3',
+    '444 12',
+    'Byn'
+),
+(
+    'a73cfd4d-78c3-4f7e-9f74-1c98f4f889fc',
+    'Bosse',
+    'Kofot',
+    'bosse@mail.com',
+    '0701-11 11 11',
+    'Strandvägen 4',
+    '444 12',
+    'Byn'
+),
+(
+    '91c8143e-e9c7-498a-b887-57ba29dc8cf3',
+    'Lena',
+    'Karlsson',
+    'lena@mail.com',
+    '0701-11 11 11',
+    'Strandvägen 5',
+    '444 12',
+    'Byn'
 );
 
 -- Add products 
-INSERT INTO Products(id,itemNumber,name,imageUrl,description,supplier,price)
+INSERT INTO Products(
+id,
+itemNumber,
+name,
+imageUrl,
+description,
+supplier,
+price
+)
 VALUES(
     '234d1eaaa87149429b0bbd6e8dc759c0',
     '1000',
@@ -54,12 +99,15 @@ VALUES(
 );
 
 -- Add Orders
-INSERT INTO Orders(id, date) 
+INSERT INTO Orders(
+id,
+orderDate
+) 
 VALUES (
-    '1'
-    '2026-12-12'
+    '7a62c46d3a4b4ac4a4133ba66e47b6AC',
+    '2026-10-20 10:30:15'
 ),
 (
-    '2'
-    '2026-01-25'
+    '53gfc46d3a4b4ac4a4133ba66e47b6ec',
+    '2026-10-21 14:45:30'
 );

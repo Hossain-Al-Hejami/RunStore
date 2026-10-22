@@ -10,5 +10,26 @@
     <Design.DataContext>
         <vm:OrdersViewModel></vm:OrdersViewModel>
     </Design.DataContext>
-    <Label Classes="pageTitle" Content="{Binding PageTitle}" />
+    <StackPanel>
+        <Label Classes="pageTitle" Content="{Binding PageTitle}" />
+
+                <!-- Rubriker -->
+        <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="0 0 0 0.8" Padding="0 50 0 0">
+            <Grid ColumnDefinitions="120,150,200,*,Auto,Auto">
+                <Label Content="Beställnings-ID" />
+                <Label Grid.Column="2" Content="Beställningsdatum" />
+            </Grid>
+        </Border>
+        <!-- Data -->
+        <ItemsControl Padding="0 5" ItemsSource="{Binding Order}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="120,150,200,*,Auto,Auto">
+                        <Label Content="{Binding Id}" />
+                        <Label Grid.Column="2" Content="{Binding OrdersDate}" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
 </UserControl>

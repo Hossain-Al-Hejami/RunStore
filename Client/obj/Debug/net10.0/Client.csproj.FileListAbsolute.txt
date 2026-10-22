@@ -116,3 +116,4 @@
 /Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/obj/Debug/net10.0/Client.pdb
 /Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/obj/Debug/net10.0/Client.genruntimeconfig.cache
 /Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/obj/Debug/net10.0/ref/Client.dll
+/Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/obj/Debug/net10.0/Client.sourcelink.json
