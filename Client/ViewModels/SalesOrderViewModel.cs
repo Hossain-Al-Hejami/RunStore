@@ -1,32 +1,30 @@
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Client.Interfaces;
 using Client.Models;
 using Client.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 
 namespace Client.ViewModels;
 
-public partial class OrdersViewModel : ViewModelBase
+public partial class SalesOrdersViewModel : ViewModelBase
 {
 
     [ObservableProperty]
-    public partial ObservableCollection<Orders> Order { get; set; } = [];
+    public partial ObservableCollection<SalesOrder> SalesOrder { get; set; } = [];
 
-    public OrdersViewModel()
+    public SalesOrdersViewModel()
     {
         PageTitle = "Beställningar";
-        LoadOrders();
+        LoadSalesOrders();
     }
 
-    private void LoadOrders()
+    private void LoadSalesOrders()
     {
         try
         {
-            IOrderService service = new OrderService();
-            Order = new ObservableCollection<Orders>(service.ListAll());
+            ISalesOrderService service = new OrderService();
+            SalesOrder = new ObservableCollection<SalesOrder>(service.ListAll());
         }
         catch (Exception ex)
         {

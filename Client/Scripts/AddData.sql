@@ -98,16 +98,5 @@ VALUES(
     1495
 );
 
--- Add Orders
-INSERT INTO Orders(
-id,
-orderDate
-) 
-VALUES (
-    '7a62c46d3a4b4ac4a4133ba66e47b6AC',
-    '2026-10-20 10:30:15'
-),
-(
-    '53gfc46d3a4b4ac4a4133ba66e47b6ec',
-    '2026-10-21 14:45:30'
-);
+-- Add SalesOrder
+INSERT INTO Orders(id)VALUES(1),(2);

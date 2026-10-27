@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj": {}
+    "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj": {}
   },
   "projects": {
-    "/Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj": {
+    "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
+        "projectUniqueName": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
         "projectName": "Client",
-        "projectPath": "/Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
+        "projectPath": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
         "packagesPath": "/Users/husseinal-hejami/.nuget/packages/",
-        "outputPath": "/Users/husseinal-hejami/Documents/Kurser/Databasteknik/Lektion-02/RunStore/Client/obj/",
+        "outputPath": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/husseinal-hejami/.nuget/NuGet/NuGet.Config"
@@ -70,9 +70,13 @@
               "target": "Package",
               "version": "[8.4.2, )"
             },
-            "Microsoft.Data.Sqlite": {
+            "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[10.0.13, )"
+              "version": "[10.0.14, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[10.0.3, )"
             }
           },
           "imports": [

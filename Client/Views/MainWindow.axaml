@@ -35,7 +35,7 @@
                                                 <Label Content="Kunder"/>
                                         </StackPanel>
                                 </Button>
-                                <Button Classes="menu" Command="{Binding GoToOrdersCommand}"><StackPanel Orientation="Horizontal">
+                                <Button Classes="menu" Command="{Binding GoToSalesOrdersCommand}"><StackPanel Orientation="Horizontal">
                                         <Label FontFamily="{DynamicResource IconFont}" Content="&#xe0b0;" />
                                         <Label Content="Beställningar"/>
                                 </StackPanel></Button>

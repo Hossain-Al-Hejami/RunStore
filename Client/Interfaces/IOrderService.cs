@@ -4,9 +4,9 @@ using Client.Models;
 
 namespace Client.Interfaces
 {
-    public interface IOrderService
+    public interface ISalesOrderService
     {
-    List<Orders> ListAll();
-    void Add(Orders order);
+    List<SalesOrder> ListAll();
+    void Add(SalesOrder salesOrders);
     }
 }

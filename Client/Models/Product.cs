@@ -4,7 +4,7 @@ namespace Client.Models;
 
 public record Product
 {
-    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public int Id { get; set; }
     public string? Description { get; set; }
     public string? ImageUrl { get; set; }
     public required string ItemNumber { get; set; }

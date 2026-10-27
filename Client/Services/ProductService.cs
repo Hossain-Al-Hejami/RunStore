@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Avalonia.Metadata;
 using Client.Interfaces;
 using Client.Models;
-using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Configuration;
+using Npgsql;
 
 namespace Client.Services;
 
@@ -13,21 +12,23 @@ public class ProductService : IProductService
     private readonly string _connectionString = string.Empty;
     public ProductService()
     {
-        _connectionString = "Data Source=runstore.db";
+        var config = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+        _connectionString = config.GetConnectionString("pgsql")!;
     }
     public void Add(Product product)
     {
         try
         {
-            var sqlInsertString = "INSERT INTO Products(id,itemNumber,name,imageUrl,description,supplier,price)";
-            sqlInsertString += $"VALUES('{product.Id}','{product.ItemNumber}','{product.Name}','Saknas','Test','{product.SupplierName}',{product.Price});";
+            var sqlInsertString = "INSERT INTO Products(itemNumber,name,description,imageurl,price)";
+            sqlInsertString += $"VALUES('{product.ItemNumber}','{product.Name}','Saknas','https://res.cloudinary.com/softtech-dev/image/upload/v1786556514/shoe-1_qig4ut.jpg',{product.Price});";
 
-            using SqliteConnection connection = new(_connectionString);
-            using SqliteCommand command = connection.CreateCommand();
+            using NpgsqlConnection connection = new(_connectionString);
+            using NpgsqlCommand command = connection.CreateCommand();
             command.CommandText = sqlInsertString;
-
             connection.Open();
-
             command.ExecuteNonQuery();
         }
         catch (Exception ex)
@@ -42,12 +43,11 @@ public class ProductService : IProductService
         {
             List<Product> products = [];
 
-            using SqliteConnection connection = new(_connectionString);
-            using SqliteCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT * FROM Products";
+            using NpgsqlConnection connection = new(_connectionString);
+            using NpgsqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT product_id, itemnumber,p.name,description,imageurl,price,s.name FROM products AS p INNER JOIN suppliers AS s ON p.supplier_id = s.suppliers_id";
             connection.Open();
-
-            using SqliteDataReader reader = command.ExecuteReader();
+            using NpgsqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
@@ -62,17 +62,17 @@ public class ProductService : IProductService
         }
     }
 
-    private Product CreateProduct(SqliteDataReader reader)
+    private Product CreateProduct(NpgsqlDataReader reader)
     {
         return new Product()
         {
-            Id = reader.GetString(0),
+            Id = reader.GetInt32(0),
             ItemNumber = reader.GetString(1),
             Name = reader.GetString(2),
-            ImageUrl = reader.GetString(3),
-            Description = reader.GetString(4),
-            SupplierName = reader.GetString(5),
-            Price = reader.GetInt32(6)
+            Description = reader.GetString(3),
+            ImageUrl = reader.GetString(4),
+            Price = (int)reader.GetFloat(5),
+            SupplierName = reader.GetString(6)
         };
     }
 }
