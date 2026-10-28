@@ -4,11 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:Client.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Client.Views.SalesOrdersView"
-             x:DataType="vm:SalesOrdersViewModel">
+             x:Class="Client.Views.OrdersView"
+             x:DataType="vm:OrdersViewModel">
 
     <Design.DataContext>
-        <vm:SalesOrdersViewModel></vm:SalesOrdersViewModel>
+        <vm:OrdersViewModel></vm:OrdersViewModel>
     </Design.DataContext>
 
     <StackPanel>
@@ -16,16 +16,16 @@
 
         <!-- Rubriker -->
         <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="0 0 0 0.8" Padding="0 50 0 0">
-            <Grid ColumnDefinitions="120,150,200,*,Auto,Auto">
+            <Grid ColumnDefinitions="200,200">
                 <Label Content="Beställnings-ID" />
                 <Label Grid.Column="1" Content="Beställningsdatum" />
             </Grid>
         </Border>
         <!-- Data -->
-        <ItemsControl Padding="0 5" ItemsSource="{Binding SalesOrder}">
+        <ItemsControl Padding="0 5" ItemsSource="{Binding Orders}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="120,150,200,*,Auto,Auto">
+                    <Grid ColumnDefinitions="200,200">
                         <Label Content="{Binding Id}" />
                         <Label Grid.Column="1" Content="{Binding OrderDate}" />
                     </Grid>

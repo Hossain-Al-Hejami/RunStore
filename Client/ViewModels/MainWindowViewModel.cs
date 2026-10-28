@@ -9,7 +9,7 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly HomeViewModel _homeView = new();
     private readonly ProductsViewModel _productView = new();
     private readonly CustomersViewModel _customerView = new();
-    private readonly SalesOrdersViewModel _orderView = new();
+    private readonly OrdersViewModel _orderView = new();
     private readonly AddProductViewModel _addProductView = new();
 
     [ObservableProperty]
@@ -30,7 +30,7 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     private void GoToCustomers() => CurrentView = _customerView;
     [RelayCommand]
-    private void GoToSalesOrders() => CurrentView = _orderView;
+    private void GoToOrders() => CurrentView = _orderView;
     [RelayCommand]
     private void GoToAddProduct() => CurrentView = _addProductView;
 }

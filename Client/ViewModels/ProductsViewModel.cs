@@ -35,13 +35,13 @@ public partial class ProductsViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void Edit(string id)
+    private void Edit(int id)
     {
         Console.WriteLine("Uppdaterar produkt med id: " + id);
     }
 
     [RelayCommand]
-    private void Delete(string id)
+    private void Delete(int id)
     {
         Console.WriteLine("Tar bort produkt med id: " + id);
     }

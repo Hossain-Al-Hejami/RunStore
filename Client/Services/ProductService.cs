@@ -23,7 +23,7 @@ public class ProductService : IProductService
         try
         {
             var sqlInsertString = "INSERT INTO Products(itemNumber,name,description,imageurl,price)";
-            sqlInsertString += $"VALUES('{product.ItemNumber}','{product.Name}','Saknas','https://res.cloudinary.com/softtech-dev/image/upload/v1786556514/shoe-1_qig4ut.jpg',{product.Price});";
+            sqlInsertString += $"VALUES('{product.ItemNumber}','{product.Name}','Test','https://res.cloudinary.com/softtech-dev/image/upload/v1786556530/shoe-3_qbzcwy.jpg',{product.Price});";
 
             using NpgsqlConnection connection = new(_connectionString);
             using NpgsqlCommand command = connection.CreateCommand();
@@ -45,7 +45,7 @@ public class ProductService : IProductService
 
             using NpgsqlConnection connection = new(_connectionString);
             using NpgsqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT product_id, itemnumber,p.name,description,imageurl,price,s.name FROM products AS p INNER JOIN suppliers AS s ON p.supplier_id = s.suppliers_id";
+            command.CommandText = "SELECT p.product_id,p.itemnumber,p.name,p.description,p.imageurl,p.price,s.name AS supplier_name FROM products AS p INNER JOIN suppliers AS s ON p.supplier_id = s.suppliers_id;";
             connection.Open();
             using NpgsqlDataReader reader = command.ExecuteReader();
 
