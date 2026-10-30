@@ -30,7 +30,8 @@
         </StackPanel>
         <StackPanel Margin="0 0 0 10" Orientation="Horizontal">
           <Label Width="150" Content="Leverantör" />
-          <TextBox Text="{Binding Supplier}" Width="200" MinWidth="200" />
+          <!-- <TextBox Text="{Binding Supplier}" Width="200" MinWidth="200" /> -->
+           <ComboBox ItemsSource="{Binding Suppliers}" SelectedItem="{Binding SelectedSupplier}" PlaceholderText="Välj leverantör" MinWidth="200" Width="200" />
         </StackPanel>
         <StackPanel Margin="0 0 0 10" Orientation="Horizontal">
           <Label Width="150" Content="Pris" />

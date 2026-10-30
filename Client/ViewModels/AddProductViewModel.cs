@@ -1,5 +1,6 @@
 using System;
-using System.Dynamic;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Client.Models;
 using Client.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -17,10 +18,19 @@ public partial class AddProductViewModel : ViewModelBase
     public partial string Supplier { get; set; } = string.Empty;
     [ObservableProperty]
     public partial string Price { get; set; } = string.Empty;
-
+    [ObservableProperty]
+    public partial ObservableCollection<Supplier> Suppliers { get; set; } = [];
+    [ObservableProperty]
+    public partial Supplier SelectedSupplier { get; set; } = new();
+    
     public AddProductViewModel()
     {
         PageTitle = "Ny Produkt";
+        // var supplierService = new SupplierService();
+        // var Suppliers = supplierService.ListAll();
+        // var suppliers = new SupplierService().ListAll();
+        // Suppliers = new ObservableCollection<Supplier>(suppliers);
+        Suppliers = new ObservableCollection<Supplier>(new SupplierService().ListAll());
     }
 
     [RelayCommand]

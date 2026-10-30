@@ -45,7 +45,7 @@ public class ProductService : IProductService
 
             using NpgsqlConnection connection = new(_connectionString);
             using NpgsqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT p.product_id,p.itemnumber,p.name,p.description,p.imageurl,p.price,s.name AS supplier_name FROM products AS p INNER JOIN suppliers AS s ON p.supplier_id = s.suppliers_id;";
+            command.CommandText = "SELECT p.product_id,p.itemnumber,p.name,p.description,p.imageurl,p.price,s.name AS supplier_name FROM products AS p INNER JOIN suppliers AS s ON p.supplier_id = s.supplier_id;";
             connection.Open();
             using NpgsqlDataReader reader = command.ExecuteReader();
 
