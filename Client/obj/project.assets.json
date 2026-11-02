@@ -2103,11 +2103,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
+      "projectUniqueName": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
       "projectName": "Client",
-      "projectPath": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
+      "projectPath": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
       "packagesPath": "/Users/husseinal-hejami/.nuget/packages/",
-      "outputPath": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/obj/",
+      "outputPath": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/husseinal-hejami/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TlCq+gTt0cM=",
+  "dgSpecHash": "VoH09gEeEMo=",
   "success": true,
-  "projectFilePath": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
+  "projectFilePath": "/Users/husseinal-hejami/Documents/SYSÄ26M/Kurser/Databasteknik/Lektion-02/RunStore/Client/Client.csproj",
   "expectedPackageFiles": [
     "/Users/husseinal-hejami/.nuget/packages/avalonia/12.1.3/avalonia.12.1.3.nupkg.sha512",
     "/Users/husseinal-hejami/.nuget/packages/avalonia.angle.windows.natives/2.1.27548.20260419/avalonia.angle.windows.natives.2.1.27548.20260419.nupkg.sha512",
